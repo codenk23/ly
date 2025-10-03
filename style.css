@@ -1,0 +1,201 @@
+/* Custom CSS Overrides for Bootstrap and Attractive UI */
+:root {
+    /* Brighter, more attractive primary color */
+    --primary-color: #007bff; /* Blue */
+    --secondary-color: #6c757d; /* Gray */
+    --success-color: #28a745;
+    --error-color: #dc3545;
+    --background-light: #f8f9fa;
+    --card-bg: #ffffff;
+    --border-color: #dee2e6;
+}
+
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--background-light);
+}
+
+.container {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+/* Header Animation */
+.display-4 {
+    animation: fadeInDown 0.8s ease-out;
+}
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Tool Selector Styles */
+.tool-selector {
+    background-color: var(--card-bg);
+    border: 2px solid var(--border-color);
+    border-radius: 12px; /* Smoother corners */
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out, box-shadow 0.3s;
+}
+
+.tool-selector:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 8px 15px rgba(0, 123, 255, 0.2); /* Soft shadow lift */
+}
+
+.tool-selector.active {
+    border-color: var(--primary-color) !important;
+    background-color: #e9f0ff; /* Light blue background for active */
+    box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.4) !important;
+    transform: none; /* No lift when active */
+}
+
+.tool-selector h2 {
+    color: var(--primary-color) !important;
+}
+
+.tool-content-area {
+    border-radius: 15px; /* Smoother card edges */
+}
+
+/* Upload Box Animation and Color */
+.upload-box {
+    background-color: #f0f7ff; /* Very light blue background */
+    transition: background-color 0.3s;
+}
+.upload-box label {
+    cursor: pointer;
+    user-select: none;
+}
+.upload-box input[type="file"] {
+    display: none;
+}
+.upload-box:hover {
+    background-color: #e0f0ff; /* Slightly darker on hover */
+}
+.upload-box .fs-1 {
+    color: var(--primary-color); /* Color the arrow icon */
+}
+.border-dashed {
+    border-style: dashed !important;
+    border-color: var(--primary-color) !important;
+}
+
+/* Image Preview Item Styles */
+.image-preview-list {
+    min-height: 100px;
+    background-color: var(--background-light); /* Distinct background for preview area */
+    border-radius: 10px !important;
+}
+.image-preview-item {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: var(--card-bg);
+    transition: transform 0.2s;
+}
+.image-preview-item:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Style for the order number (PDF Tool) */
+.image-order-number {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 0.8em;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-bottom-right-radius: 4px;
+    z-index: 10;
+}
+
+.image-preview-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-name {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    font-size: 0.6em;
+    padding: 2px 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.remove-btn {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: var(--error-color);
+    color: white;
+    border: 2px solid var(--card-bg); /* White border to stand out */
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    line-height: 1;
+    font-size: 12px;
+    cursor: pointer;
+    z-index: 10;
+    opacity: 0.8;
+    transition: opacity 0.2s, transform 0.2s;
+}
+.remove-btn:hover {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+/* Status Message Animation */
+.status-message.alert {
+    display: block !important;
+    margin-top: 0;
+    animation: slideIn 0.5s ease-out;
+}
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.status-message.alert.d-none {
+    display: none !important;
+}
+
+/* Custom Bootstrap Utility */
+.border-dashed {
+    border-style: dashed !important;
+}
+
+/* Tool Content Visibility */
+.tool-content.hidden {
+    display: none;
+}
